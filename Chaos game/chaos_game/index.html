@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <title>Chaos game</title>
+    <style> body {padding: 0; margin: 0;} </style>
+    <script src="../p5.min.js"></script>
+    <script src="../addons/p5.dom.min.js"></script>
+    <script src="../addons/p5.sound.min.js"></script>
+    <script src="sketch.js"></script>
+    <script src="dot.js"></script>
+
+    <style>
+    .canvas {
+      border-radius: 10px 10px;
+      background-image: linear-gradient(#d6d6ff, #eaeaff);
+      border: 2px solid #bfbfff;
+    }
+    .canvas:hover {
+      cursor: crosshair;
+    }
+
+    .button:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      opacity: 1
+    }
+    .button {
+      background-color: #7575ff;
+      border-radius: 6px 6px;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      opacity: 0.6;
+      transition: 0.3s;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .slider {
+      -webkit-appearance: none;
+      width: 450px;
+      height: 15px;
+      border-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+    }
+    .slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #7575ff;
+      cursor: pointer;
+    }
+    .slider::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background: #4CAF50;
+      cursor: pointer;
+    }
+    .slider:hover {
+      opacity: 1;
+    }
+
+    .buttonDiv {
+      margin: 0 auto;
+      text-align: center;
+      padding: 15px;
+    }
+    </style>
+
+  </head>
+  <body bgcolor="#f7f7ff" style="font-family: 'Montserrat','HelveticaNeue','Helvetica Neue',sans-serif;">
+    <div class = "buttonDiv">
+      press space bar to place dots <br>  <button class="button"  id ="travellerButton" onclick="setTraveller()">Click to place a starting point</button>
+      <button class="button" id ="travellerButton" onclick="reset()">reset</button>
+      <button class="button"  id ="playButton" onclick="startTime()">play</button>
+      <div class="slidecontainer">
+        <input class="slider" id="speed" type="range" min="1" max="600" value="75" class="slider" id="myRange">
+      </div>
+    </div>
+    <br>
+  </body>
+</html>
